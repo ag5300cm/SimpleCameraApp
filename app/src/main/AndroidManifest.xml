@@ -15,6 +15,20 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <!--Change the android:authorities to the package of your own code. It should match the 2nd argument in the call to fileProvider.getUriForFile -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.meghan.simplecameraapp"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+        <!--Need to add new Directory under res, and file with paths info-->
+
+
     </application>
 
     <!--Need to ask for permission on android apps. To use device storage -->
